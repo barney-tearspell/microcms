@@ -1,0 +1,20 @@
+{
+    "name": "root/micro-cms",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Vrkljan",
+            "email": "mvrkljan@gmail.com"
+        }
+    ],
+    "require": {
+        "bcosca/fatfree-core": "dev-master",
+        "vlucas/phpdotenv": "1.1.*@dev"
+    },
+    "autoload": {
+        "psr-4": {
+          "": "vendor/bcosca/fatfree-core",
+          "": "src/"
+        }
+    }
+}
