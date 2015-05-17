@@ -37,6 +37,14 @@ class NeuronMapper extends \DB\Jig\Mapper {
 		return $this->document;
 	}
 
+	public function &get($key)
+	{
+		if($key === 'synapse')
+		{
+			$key = '_id';
+		}
+		return parent::get($key);
+	}
 
 	public function set($key, $val)
 	{

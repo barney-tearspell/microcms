@@ -9,18 +9,35 @@
             <header>{{ @ERROR['code'] . ' ' . @ERROR['status'] }}</header>
             <dl>
                 <repeat group="{{ @ERROR }}" key="{{ @key }}" value="{{ @value }}">
-                    <check if="{{ @key !== 'trace' }}">
-                        <dt>{{ @key }}</dt>
-                        <dd>{{ @value }}</dd>
-                    </check>
+                    <dt>{{ @key }}</dt>
+                    <dd>{{ @value | raw }}</dd>
                 </repeat>
             </dl>
         </article>
 
         <check if="{{ @showLoginForm }}">
             <form action="/login" method="post">
-                <input type="text" name="username" />
-                <input type="password" name="password" />
+                <div class="input">
+                    <label>Email</label>
+                    <input type="email" name="email" />
+                </div>
+                <div class="input">
+                    <label>Password</label>
+                    <input type="password" name="password" />
+                </div>
+            </form>
+        </check>
+
+        <check if="{{ @showPageForm }}">
+            <form action="/login" method="post">
+                <div class="input">
+                    <label>Email</label>
+                    <input type="email" name="email" />
+                </div>
+                <div class="input">
+                    <label>Password</label>
+                    <input type="password" name="password" />
+                </div>
             </form>
         </check>
     </body>
